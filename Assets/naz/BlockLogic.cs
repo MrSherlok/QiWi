@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockLogic : MonoBehaviour {
 	private ParticleSystem destroyParticleEffect;
-	int hp = 3;
+	public int hp = 3;
 	void Start () {
 		destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
 	}
