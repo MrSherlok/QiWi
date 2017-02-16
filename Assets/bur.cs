@@ -9,12 +9,10 @@ public class bur : MonoBehaviour
 
     private Transform _mainCameraTransform;
     private Transform _transform;
-    private CharacterController _characterController;
 
     private void OnEnable()
     {
         _mainCameraTransform = Camera.main.GetComponent<Transform>();
-        _characterController = GetComponent<CharacterController>();
         _transform = GetComponent<Transform>();
     }
 
@@ -27,14 +25,16 @@ public class bur : MonoBehaviour
         // If we have some input
         if (inputVector.sqrMagnitude > 0.001f)
         {
-            movementVector = _mainCameraTransform.TransformDirection(inputVector);
-            movementVector.y = 0f;
-            movementVector.Normalize();
-            _transform.forward = movementVector;
+            //movementVector = _mainCameraTransform.TransformDirection(inputVector);
+            //movementVector.y = 0f;
+            //movementVector.Normalize();
+            //_transform.forward = movementVector;
+            var angle = Mathf.Acos((inputVector.x*-2+inputVector.y*0) / (Mathf.Sqrt((inputVector.x*inputVector.x)+(inputVector.y*inputVector.y))+Mathf.Sqrt(4)));
+            Debug.Log(angle);
         }
+        
 
         movementVector += Physics.gravity;
-        _characterController.Move(movementVector * Time.deltaTime);
 
 
     }

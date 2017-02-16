@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\VirtualJoystick.cs" />
     <Compile Include="Assets\bur.cs" />
+    <Compile Include="Assets\lookAT.cs" />
     <Compile Include="Assets\naz\BlockLogic.cs" />
     <Compile Include="Assets\naz\BurMachine.cs" />
     <Compile Include="Assets\naz\SimplePlayerController.cs" />

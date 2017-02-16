@@ -25,15 +25,16 @@ public class VirtualJoystick : MonoBehaviour,IDragHandler,IPointerUpHandler,IPoi
                                                                     ped.pressEventCamera,
                                                                     out pos))
         {
-            pos.x = (pos.x/bgImage.rectTransform.sizeDelta.x);
+            pos.x = (pos.x / bgImage.rectTransform.sizeDelta.x);
             pos.y = (pos.y / bgImage.rectTransform.sizeDelta.y);
 
-            inputVector = new Vector3(pos.x * 2 + 1, 0, pos.y * 2 - 1);
+            inputVector = new Vector3(pos.x * 2 + 1, pos.y * 2 - 1,0f);
             inputVector = (inputVector.magnitude > 1.0f) ? inputVector.normalized : inputVector;
 
+            Debug.Log(inputVector);
             //Move img
             joystickImg.rectTransform.anchoredPosition = new Vector3(inputVector.x * (bgImage.rectTransform.sizeDelta.x / 3),
-                                                                      inputVector.z * (bgImage.rectTransform.sizeDelta.y / 3));
+                                                                      inputVector.y * (bgImage.rectTransform.sizeDelta.y / 3));
 
         }
     }
@@ -58,17 +59,9 @@ public class VirtualJoystick : MonoBehaviour,IDragHandler,IPointerUpHandler,IPoi
 
     public float Vertical()
     {
-        if (inputVector.z != 0)
-            return inputVector.z;
+        if (inputVector.y != 0)
+            return inputVector.y;
         else return Input.GetAxis("Vertical");
 
     }
-
-
-
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
