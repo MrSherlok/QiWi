@@ -29,8 +29,20 @@ public class bur : MonoBehaviour
             //movementVector.y = 0f;
             //movementVector.Normalize();
             //_transform.forward = movementVector;
-            var angle = Mathf.Acos((inputVector.x*-2+inputVector.y*0) / (Mathf.Sqrt((inputVector.x*inputVector.x)+(inputVector.y*inputVector.y))+Mathf.Sqrt(4)));
-            Debug.Log(angle);
+            float a = Mathf.Sqrt((inputVector.x * inputVector.x)+ (inputVector.y * inputVector.y));
+            float b = Mathf.Sqrt(1);
+            float c = Mathf.Sqrt((inputVector.x+1)*(inputVector.x + 1) +(inputVector.y)*(inputVector.y));
+            float angle = (a * a + b * b - c * c) / (2 * a * b);
+            float ccos = (a * a + b * b - c * c) / (2 * a * b);
+            //float ccos = Mathf.Cos(inputVector.x / c);
+            float aangle = ccos / Mathf.PI * 180;
+            float bur_angle = 360 * ccos;
+            var angle1 = Mathf.Acos(Mathf.Cos((inputVector.x*1+inputVector.y*0) / (Mathf.Sqrt((inputVector.x*inputVector.x)+(inputVector.y*inputVector.y))+Mathf.Sqrt(1))));
+            Debug.Log(ccos);
+            Debug.Log("   "+bur_angle);
+            Debug.Log("x= " + inputVector.x);
+            Debug.Log("y= "+ inputVector.y);
+            //Debug.Log("try= " + aangle);
         }
         
 

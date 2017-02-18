@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockLogic : MonoBehaviour {
-	private ParticleSystem destroyParticleEffect;
+	//private ParticleSystem destroyParticleEffect;
 	public int hp = 3;
 	void Start () {
-		destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
+		//destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
 	}
 
 	public void GetDamage (int damage) {
 		hp -= damage;
-		destroyParticleEffect.Play ();
+		//destroyParticleEffect.Play ();
 		UpdateHp ();
 	}
 	private void UpdateHp(){

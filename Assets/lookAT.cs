@@ -16,6 +16,7 @@ public class lookAT : MonoBehaviour {
 		if(Stick != null)
         {
             transform.LookAt(Stick);
+            //transform.rotation = Quaternion.identity;
         }
 	}
 }

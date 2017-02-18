@@ -7,12 +7,6 @@ namespace CustomJoystick
     {
         private Vector3[] directionalVectors = { Vector3.forward, Vector3.back, Vector3.right, Vector3.left };
 
-        private Transform _mainCameraTransform;
-
-        private void Awake()
-        {
-            _mainCameraTransform = Camera.main.transform;
-        }
 
         private void Update()
         {
@@ -33,11 +27,11 @@ namespace CustomJoystick
             }
 
             // closestDirectionVector is what we need
-            var transformedDirection = _mainCameraTransform.InverseTransformDirection(closestDirectionVector);
-            transformedDirection.y = 0f;
-            transformedDirection.Normalize();
+            //var transformedDirection = _mainCameraTransform.InverseTransformDirection(closestDirectionVector);
+            //    transformedDirection.y = 0f;
+            //    transformedDirection.Normalize();
 
-            transform.position += transformedDirection * Time.deltaTime;
+            //    transform.position += transformedDirection * Time.deltaTime;
         }
     }
 }
