@@ -10,8 +10,11 @@ public class SimplePlayerController : MonoBehaviour {
     private float jumpTime = 1f;
     private float jumpTimeLeft;
 
+	Animator ani;
+
 	void Start()
-	{
+	{	
+		ani = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 
@@ -24,6 +27,8 @@ public class SimplePlayerController : MonoBehaviour {
         if(movementVector.x != 0)
         {
             rb2d.velocity = new Vector2(movementVector.x * 2, rb2d.velocity.y);
+
+
         }
         if (movementVector.x < 0f)
         {

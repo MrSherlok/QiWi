@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockLogic : MonoBehaviour {
-	//private ParticleSystem destroyParticleEffect;
+	private ParticleSystem destroyParticleEffect;
+	private GameObject particlesObject;
 	public int hp = 3;
 	void Start () {
-		//destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
+		destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
 	}
 
 	public void GetDamage (int damage) {
 		hp -= damage;
-		//destroyParticleEffect.Play ();
+		destroyParticleEffect.Play ();
 		UpdateHp ();
 	}
 	private void UpdateHp(){
@@ -21,7 +22,9 @@ public class BlockLogic : MonoBehaviour {
 		}
 	}
 	private void DestroyBlock (){
-		GetComponent<SpriteRenderer> ().enabled = false;
+		particlesObject = transform.GetChild(0).gameObject;
+		transform.GetChild(0).SetParent(null);
+		Destroy (particlesObject, 2f);
 		Destroy(gameObject);
 	}
 }
