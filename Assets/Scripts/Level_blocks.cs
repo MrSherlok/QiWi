@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Level_blocks : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class Level_blocks : MonoBehaviour
 
     [SerializeField]
     private GameObject[] blocksTypes;
+
+    //public Text txt;
 
 
     public float blockSize
@@ -32,12 +34,15 @@ public class Level_blocks : MonoBehaviour
 
         for (int y = 0; y < mapY; y++)
         {
+            //txt.text += y + "   ";
             char[] newBlock = mapData[y].ToCharArray();
 
             for (int x = 0; x < mapX; x++)
             {
                 PlaceBlock(newBlock[x].ToString(), x, y, worldStart);
+                //txt.text += newBlock[x].ToString();
             }
+            //txt.text += "\n";
         }
     }
 
@@ -45,19 +50,18 @@ public class Level_blocks : MonoBehaviour
     {
         int blockIndex = int.Parse(blockType);
 
-        if (blockType != "0")
-        {
+
             GameObject newBlock = Instantiate(blocksTypes[blockIndex]);
 
             newBlock.transform.position = new Vector3(worldStart.x + (blockSize * x), worldStart.y - (blockSize * y));
-        }
+        
     }
 
     private string[] ReadLevelText()
     {
         TextAsset bindData = Resources.Load("0") as TextAsset;
 
-        string data = bindData.text.Replace(Environment.NewLine, string.Empty);
-        return data.Split('-');
+        //string data = bindData.text.Replace(System.Environment.NewLine, "-");
+        return bindData.text.Split('-');
     }
 }
