@@ -30,7 +30,7 @@ public class Level_blocks : MonoBehaviour
 
         int mapY = mapData.Length;
 
-        Vector3 worldStart = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height/8));
+        Vector3 worldStart = new Vector3(0f, 0f, 0f)/*Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height/8))*/;
 
         for (int y = 0; y < mapY; y++)
         {
@@ -50,18 +50,19 @@ public class Level_blocks : MonoBehaviour
     {
         int blockIndex = int.Parse(blockType);
 
-
+        if (blockIndex != 0)
+        {
             GameObject newBlock = Instantiate(blocksTypes[blockIndex]);
 
             newBlock.transform.position = new Vector3(worldStart.x + (blockSize * x), worldStart.y - (blockSize * y));
-        
+        }
     }
 
     private string[] ReadLevelText()
     {
         TextAsset bindData = Resources.Load("0") as TextAsset;
 
-        //string data = bindData.text.Replace(System.Environment.NewLine, "-");
+        //string data = bindData.text.Replace(System.Environment.NewLine, string.Empty);
         return bindData.text.Split('-');
     }
 }
