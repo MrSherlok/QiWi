@@ -52,7 +52,7 @@ public class SimplePlayerController : MonoBehaviour {
         {
             jumpTimeLeft -= Time.deltaTime;
         }
-		if (movementVector.y < -0.85f && bur.GetComponent<BurMachine>().attackNow)
+		if (movementVector.y < -0.65f && bur.GetComponent<BurMachine>().attackNow)
 			ani.SetTrigger ("AttackUnder");
 			GameObject.Find ("B_Attack").GetComponent<B_attack> ().AttackActivate ();
 		}
