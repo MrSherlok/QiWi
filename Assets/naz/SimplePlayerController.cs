@@ -10,6 +10,8 @@ public class SimplePlayerController : MonoBehaviour {
     private float jumpTime = 1f;
     private float jumpTimeLeft;
 
+	public GameObject bur;
+
 	Animator ani;
 
 	void Start()
@@ -50,12 +52,9 @@ public class SimplePlayerController : MonoBehaviour {
         {
             jumpTimeLeft -= Time.deltaTime;
         }
+		if (movementVector.y < -0.85f && bur.GetComponent<BurMachine>().attackNow)
+			ani.SetTrigger ("AttackUnder");
+			GameObject.Find ("B_Attack").GetComponent<B_attack> ().AttackActivate ();
+		}
 	}
 
-//namespace CustomJoystick
-//{
-            
-            
-
-            
-}
