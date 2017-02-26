@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\B_attack.cs" />
+     <Compile Include="Assets\OpenCraftPanel.cs" />
+     <Compile Include="Assets\PlayerTargeter.cs" />
      <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Level_blocks.cs" />
      <Compile Include="Assets\VirtualJoystick.cs" />
@@ -56,6 +58,7 @@
      <Compile Include="Assets\naz\BurMachine.cs" />
      <Compile Include="Assets\naz\SimplePlayerController.cs" />
      <None Include="Assets\Resources\0.txt" />
+     <None Include="Assets\Resources\0 — копия.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/unity56b7/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

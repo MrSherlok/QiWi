@@ -67,6 +67,7 @@
      <Compile Include="Assets\Standard Assets\CNControls\Scripts\Controllers\SimpleJoystick.cs" />
      <Compile Include="Assets\Standard Assets\CNControls\Scripts\Controllers\Touchpad.cs" />
      <None Include="Assets\Resources\0.txt" />
+     <None Include="Assets\Resources\0 — копия.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/unity56b7/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

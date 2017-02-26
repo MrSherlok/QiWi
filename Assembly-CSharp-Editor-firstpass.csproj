@@ -49,6 +49,7 @@
      <Compile Include="Assets\Standard Assets\CNControls\Editor\AdditionaHelpingGuidance.cs" />
      <Compile Include="Assets\Standard Assets\CNControls\Editor\ErrorPopupWindow.cs" />
      <None Include="Assets\Resources\0.txt" />
+     <None Include="Assets\Resources\0 — копия.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/Unity/unity56b7/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
