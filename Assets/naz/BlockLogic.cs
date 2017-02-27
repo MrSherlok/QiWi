@@ -18,7 +18,7 @@ public class BlockLogic : MonoBehaviour {
 	private void UpdateHp(){
 		
 		if (hp <= 0) {
-			Invoke("DestroyBlock",1f);
+			Invoke("DestroyBlock",0f);
 		}
 	}
 	private void DestroyBlock (){

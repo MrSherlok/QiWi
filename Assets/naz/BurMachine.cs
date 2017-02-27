@@ -9,22 +9,23 @@ public class BurMachine : MonoBehaviour {
     private float burFirstSpeed = 0.3f;
     private bool count = false;
 
-	public GameObject blockTargerSquad;
+    public GameObject blockTargerSquad;
 
-	public bool attackNow = false;
+    public bool attackNow = false;
 
 
 	void OnTriggerStay2D(Collider2D col){
 		
 		if (col.gameObject.tag == "DestroybleBox" && burCD && attackNow) {
-			
-			blockTargerSquad.transform.position = col.transform.position;
-			
-			col.gameObject.GetComponent<BlockLogic>().GetDamage(1);
-			burCD = false;
-		//}
-        //if(col.gameObject.tag == "DestroybleBox" && burCD)
-        //{
+
+            blockTargerSquad.transform.position = col.transform.position;
+
+
+            burCD = false;
+            //}
+            //if(col.gameObject.tag == "DestroybleBox" && burCD)
+            //{
+            col.gameObject.GetComponent<BlockLogic>().GetDamage(1);
             StartCoroutine("BurCD");
         }
 	}
