@@ -133,6 +133,7 @@
   <ItemGroup>
     <None Include="Assets\Resources\0 %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.txt" />
     <None Include="Assets\Resources\0.txt" />
+    <None Include="Assets\Resources\visible.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
