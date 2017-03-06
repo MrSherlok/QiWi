@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\BlockStayVisible.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\Level_blocks.cs" />
+    <Compile Include="Assets\Scripts\MapCamera.cs" />
     <Compile Include="Assets\VirtualJoystick.cs" />
     <Compile Include="Assets\bur.cs" />
     <Compile Include="Assets\lookAT.cs" />

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockLogic : MonoBehaviour {
-    public int PosX;
-    public int PosY;
+    //public int PosX;
+    //public int PosY;
 	private ParticleSystem destroyParticleEffect;
 	private GameObject particlesObject;
 	public int hp = 3;

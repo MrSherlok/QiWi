@@ -57,8 +57,9 @@ public class Level_blocks : MonoBehaviour
         if (blockIndex != 0)
         {
             GameObject newBlock = Instantiate(blocksTypes[blockIndex]);
-            newBlock.GetComponent<BlockLogic>().PosX = x;
-            newBlock.GetComponent<BlockLogic>().PosY = y;
+            //newBlock.GetComponent<BlockLogic>().PosX = x;
+            //newBlock.GetComponent<BlockLogic>().PosY = y;
+            newBlock.name = x + "_" + y;
             if(blockVis == '0')
             {
                 newBlock.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
