@@ -9,24 +9,31 @@ public class BurMachine : MonoBehaviour {
     private float burFirstSpeed = 0.3f;
     private bool count = false;
 
+    public static bool hasBlock = false;
+
+    //public GameObject bur;
+    public Animator ani;
+
     public GameObject blockTargerSquad;
 
-    public bool attackNow = false;
+    //public bool attackNow = true;
 
 
 	void OnTriggerStay2D(Collider2D col){
 		
-		if (col.gameObject.tag == "DestroybleBox" && burCD && attackNow) {
-
+		if (col.gameObject.tag == "DestroybleBox" && burCD) {
+            hasBlock = true;
             blockTargerSquad.transform.position = col.transform.position;
-
-
+            Attack();
             burCD = false;
             //}
             //if(col.gameObject.tag == "DestroybleBox" && burCD)
             //{
             col.gameObject.GetComponent<BlockLogic>().GetDamage(1);
             StartCoroutine("BurCD");
+        } else
+        {
+            hasBlock = false;
         }
 	}
 	IEnumerator BurCD(){
@@ -38,4 +45,19 @@ public class BurMachine : MonoBehaviour {
 		//burEffect.Stop();
 
 	}
+
+
+
+    public void Attack()
+    {
+        ani.SetTrigger("Attack");
+        //StartCoroutine("AttackActivate");
+
+    }
+    //public IEnumerator AttackActivate()
+    //{
+    //    gameObject.GetComponent<BurMachine>().attackNow = true;
+    //    yield return new WaitForSeconds(0.4f);
+    //    gameObject.GetComponent<BurMachine>().attackNow = false;
+    //}
 }

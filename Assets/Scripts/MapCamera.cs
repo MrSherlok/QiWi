@@ -13,8 +13,8 @@ public class MapCamera : MonoBehaviour {
 
 	void Start () {
         mainCam = true;
-        main.enabled = true;
-        map.enabled = false;
+        //main.enabled = true;
+        //map.enabled = false;
     }
 
     public void SwitchCam ()
@@ -22,12 +22,14 @@ public class MapCamera : MonoBehaviour {
         mainCam = !mainCam;
         if (mainCam)
         {
-            main.enabled = true;
-            map.enabled = false;
+            main.orthographicSize = 2;
+            //main.enabled = true;
+            //map.enabled = false;
         } else
         {
-            main.enabled = false;
-            map.enabled = true;
+            main.orthographicSize = 10;
+            //main.enabled = false;
+            //map.enabled = true;
         }
     }
 }

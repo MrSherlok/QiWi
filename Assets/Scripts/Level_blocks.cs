@@ -4,10 +4,13 @@ using UnityEngine.UI;
 
 public class Level_blocks : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject blockParent;
 
 
     [SerializeField]
     private GameObject[] blocksTypes;
+
 
     //public Text txt;
 
@@ -64,6 +67,7 @@ public class Level_blocks : MonoBehaviour
             {
                 newBlock.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
             }
+            newBlock.transform.parent = blockParent.transform;
             newBlock.transform.position = new Vector3(worldStart.x + (blockSize * x), worldStart.y - (blockSize * y));
         }
     }

@@ -7,12 +7,12 @@ public class B_attack : MonoBehaviour {
 	public Animator ani;
 	public void Attack () {
 		ani.SetTrigger("Attack");
-		StartCoroutine("AttackActivate");
+		//StartCoroutine("AttackActivate");
 
 	}
-	public IEnumerator AttackActivate(){
-		bur.GetComponent<BurMachine> ().attackNow = true;
-		yield return new WaitForSeconds(0.5f);
-		bur.GetComponent<BurMachine> ().attackNow = false;
-	}
+	//public IEnumerator AttackActivate(){
+	//	bur.GetComponent<BurMachine> ().attackNow = true;
+	//	yield return new WaitForSeconds(0.5f);
+	//	bur.GetComponent<BurMachine> ().attackNow = false;
+	//}
 }

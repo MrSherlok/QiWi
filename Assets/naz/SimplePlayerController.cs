@@ -32,7 +32,7 @@ public class SimplePlayerController : MonoBehaviour {
         movementVector = new Vector3(CnInputManager.GetAxis("Horizontal"), CnInputManager.GetAxis("Vertical"),0f);
         if (movementVector.sqrMagnitude < 0.00001f) return;
 
-        if(movementVector.x >= 0.2f || movementVector.x <= -0.2f)
+        if(movementVector.x >= 0.3f || movementVector.x <= -0.3f)
         {
             rb2d.velocity = new Vector2(movementVector.x * 2, rb2d.velocity.y);
 
@@ -60,13 +60,15 @@ public class SimplePlayerController : MonoBehaviour {
         }
 		if (movementVector.y < -0.65f /*&& bur.GetComponent<BurMachine>().attackNow*/)
 		{
+            
 			ani.SetTrigger ("AttackUnder");
-			GameObject.Find ("B_Attack").GetComponent<B_attack> ().AttackActivate ();
+			//bur.GetComponent<BurMachine> ().Attack ();
 		}
 		if (movementVector.y > 0.75f/* && bur.GetComponent<BurMachine>().attackNow*/)
 		{
-			ani.SetTrigger ("UpAttack");
-			GameObject.Find ("B_Attack").GetComponent<B_attack> ().AttackActivate ();
+            if (BurMachine.hasBlock)
+                ani.SetTrigger ("UpAttack");
+            //bur.GetComponent<BurMachine> ().Attack();
 		}
 
 	}
