@@ -6,6 +6,7 @@ public class BlockLogic : MonoBehaviour {
     //public int PosX;
     //public int PosY;
     public bool newBlock = false;
+	private GameObject resBase;
 
     [SerializeField]
     private GameObject _backLayer;
@@ -16,21 +17,17 @@ public class BlockLogic : MonoBehaviour {
     [SerializeField]
     private GameObject _frontLayer;
 
-
-
-
-    private ParticleSystem destroyParticleEffect;
+	void Start(){
+		resBase = GameObject.Find("CountRes");
+	}
+	public GameObject destroyParticleEffect;
 	private GameObject particlesObject;
 	public int hp = 3;
-	void Start () {
-		//destroyParticleEffect = GetComponentInChildren<ParticleSystem>();
-        //gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,255);
 
-    }
 
 	public void GetDamage (int damage) {
 		hp -= damage;
-        //destroyParticleEffect.Play ();
+        
         if (newBlock)
         {
             if (hp == 3)
@@ -57,13 +54,14 @@ public class BlockLogic : MonoBehaviour {
 	private void UpdateHp(){
 		
 		if (hp <= 0) {
-			Invoke("DestroyBlock",0f);
+			if (destroyParticleEffect != null) {
+				Debug.Log ("im Created");
+				Instantiate (destroyParticleEffect,transform.position,Quaternion.identity);
+
+				resBase.GetComponent<ResCount>().AddRes(1);
+			}
+			Destroy(gameObject);
 		}
 	}
-	private void DestroyBlock (){
-	//	particlesObject = transform.GetChild(0).gameObject;
-		//transform.GetChild(0).SetParent(null);
-		//Destroy (particlesObject, 2f);
-		Destroy(gameObject);
-	}
+
 }
