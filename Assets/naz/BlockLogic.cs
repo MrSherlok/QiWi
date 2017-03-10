@@ -5,7 +5,21 @@ using UnityEngine;
 public class BlockLogic : MonoBehaviour {
     //public int PosX;
     //public int PosY;
-	private ParticleSystem destroyParticleEffect;
+    public bool newBlock = false;
+
+    [SerializeField]
+    private GameObject _backLayer;
+
+    [SerializeField]
+    private GameObject _midLayer;
+
+    [SerializeField]
+    private GameObject _frontLayer;
+
+
+
+
+    private ParticleSystem destroyParticleEffect;
 	private GameObject particlesObject;
 	public int hp = 3;
 	void Start () {
@@ -16,7 +30,28 @@ public class BlockLogic : MonoBehaviour {
 
 	public void GetDamage (int damage) {
 		hp -= damage;
-		//destroyParticleEffect.Play ();
+        //destroyParticleEffect.Play ();
+        if (newBlock)
+        {
+            if (hp == 3)
+            {
+                _backLayer.SetActive(true);
+                _midLayer.SetActive(true);
+                _frontLayer.SetActive(true);
+            }
+            if (hp == 2)
+            {
+                _backLayer.SetActive(true);
+                _midLayer.SetActive(true);
+                _frontLayer.SetActive(false);
+            }
+            if (hp == 1)
+            {
+                _backLayer.SetActive(true);
+                _midLayer.SetActive(false);
+                _frontLayer.SetActive(false);
+            }
+        }
 		UpdateHp ();
 	}
 	private void UpdateHp(){

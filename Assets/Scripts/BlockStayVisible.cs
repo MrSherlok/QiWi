@@ -7,6 +7,9 @@ public class BlockStayVisible : MonoBehaviour {
     [SerializeField]
     GameObject Player;
 
+    [SerializeField]
+    private Level_blocks _visibleScript;
+
     private GameObject _tile;
 
 
@@ -23,7 +26,7 @@ public class BlockStayVisible : MonoBehaviour {
         {
             _tile = col.gameObject;
             //string[] pos = gameObject.name.Split('_');
-            UpdateWorld();
+            ChangeColor(_tile);
             //UpdateWorld(col.gameObject.GetComponent<BlockLogic>().PosX, col.gameObject.GetComponent<BlockLogic>().PosY);
         }
     }
@@ -41,11 +44,25 @@ public class BlockStayVisible : MonoBehaviour {
 
         //for (int x = 0; x < maxX; x++)
         //    txtFull += mapVisible[x].ToString();
+        //ChangeColor(_tile);
 
-        _tile.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        //_tile.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 
 
 
+    }
+
+
+    private void ChangeColor(GameObject block)
+    {
+        //int children = block.transform.childCount;
+        //for (int i = 0; i < children; ++i)
+        //{
+        //    if (block.transform.GetChild(i) != null)
+        //    {
+                block.GetComponent<SpriteRenderer>().enabled = false;
+        //    }
+        //}
     }
 
     //private char[] ReadLevelVisible()

@@ -65,16 +65,36 @@ public class Level_blocks : MonoBehaviour
             newBlock.name = x + "_" + y;
             if(blockVis == '0')
             {
-                newBlock.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
+                ChangeColor(newBlock);
             }
             newBlock.transform.parent = blockParent.transform;
             newBlock.transform.position = new Vector3(worldStart.x + (blockSize * x), worldStart.y - (blockSize * y));
         }
     }
 
+
+
+    private void ChangeColor(GameObject block)
+    {
+        block.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+
+    //private void ChangeColor(GameObject block)
+    //{
+    //    int children = block.transform.childCount;
+    //    for (int i = 0; i < children; ++i)
+    //    {
+    //        if (block.transform.GetChild(i) != null)
+    //        {
+    //            block.transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
+    //        }
+    //    }
+    //}
+
     private string[] ReadLevelText()
     {
-        TextAsset bindData = Resources.Load("0") as TextAsset;
+        TextAsset bindData = Resources.Load("1") as TextAsset;
 
         //string data = bindData.text.Replace(System.Environment.NewLine, string.Empty);
         return bindData.text.Split('-');

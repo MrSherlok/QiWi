@@ -6,8 +6,6 @@ public class BurMachine : MonoBehaviour {
 	private bool burCD = true;
 	private ParticleSystem burEffect;
 	public float burSpeed = 0.1f;
-    private float burFirstSpeed = 0.3f;
-    private bool count = false;
 
     public static bool hasBlock = false;
 
