@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: deb4ce2e3de963d4c86badf45facee68
-timeCreated: 1487020138
+timeCreated: 1489256727
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - resBase: {instanceID: 0}
+  - _backLayer: {instanceID: 0}
+  - _midLayer: {instanceID: 0}
+  - _frontLayer: {instanceID: 0}
+  - destroyParticleEffect: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

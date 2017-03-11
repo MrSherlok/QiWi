@@ -5,17 +5,35 @@ using UnityEngine.UI;
 
 public class ResCount : MonoBehaviour {
 
-	private int resources;
-	Text text;
-	void Start () {
-		Text text = gameObject.GetComponent<Text>();
-	}
-	public void AddRes(int count){
-		resources += count;
-		RenewUI ();
-	}
-	private void RenewUI(){
-		text.text = resources.ToString();
-	}
 
+    public static int gold = 0;
+    public static int silver = 0;
+
+
+	private int resources;
+    [SerializeField]
+    Text textG;
+    [SerializeField]
+    Text textS;
+  //  void Start () {
+		//Text textG = gameObject.GetComponent<Text>();
+  //  }
+
+
+
+
+    //   public void AddRes(int count){
+    //	resources += count;
+    //	RenewUI ();
+    //}
+    //private void RenewUI(){
+    //	text.text = resources.ToString();
+    //}
+
+
+    void Update()
+    {
+        textG.text = gold.ToString();
+        textS.text = silver.ToString();
+    }
 }

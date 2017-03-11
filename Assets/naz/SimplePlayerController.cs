@@ -66,7 +66,7 @@ public class SimplePlayerController : MonoBehaviour {
 		}
 		if (movementVector.y > 0.75f/* && bur.GetComponent<BurMachine>().attackNow*/)
 		{
-            if (BurMachine.hasBlock)
+            //if (BurMachine.hasBlock)
                 ani.SetTrigger ("UpAttack");
             //bur.GetComponent<BurMachine> ().Attack();
 		}

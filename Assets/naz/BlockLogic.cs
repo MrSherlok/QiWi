@@ -5,8 +5,11 @@ using UnityEngine;
 public class BlockLogic : MonoBehaviour {
     //public int PosX;
     //public int PosY;
-    public bool newBlock = false;
-	private GameObject resBase;
+    public bool noneRes = true;
+    public bool goldRes = false;
+    public bool silverRes = false;
+
+    //private GameObject resBase;
 
     [SerializeField]
     private GameObject _backLayer;
@@ -17,19 +20,18 @@ public class BlockLogic : MonoBehaviour {
     [SerializeField]
     private GameObject _frontLayer;
 
-	void Start(){
-		resBase = GameObject.Find("CountRes");
-	}
-	public GameObject destroyParticleEffect;
-	private GameObject particlesObject;
+    //void Start()
+    //{
+    //    resBase = GameObject.Find("CountRes");
+    //}
+ //   public GameObject destroyParticleEffect;
+	//private GameObject particlesObject;
 	public int hp = 3;
 
 
 	public void GetDamage (int damage) {
 		hp -= damage;
         
-        if (newBlock)
-        {
             if (hp == 3)
             {
                 _backLayer.SetActive(true);
@@ -48,18 +50,25 @@ public class BlockLogic : MonoBehaviour {
                 _midLayer.SetActive(false);
                 _frontLayer.SetActive(false);
             }
-        }
 		UpdateHp ();
 	}
 	private void UpdateHp(){
 		
 		if (hp <= 0) {
-			if (destroyParticleEffect != null) {
-				Debug.Log ("im Created");
-				Instantiate (destroyParticleEffect,transform.position,Quaternion.identity);
 
-				resBase.GetComponent<ResCount>().AddRes(1);
-			}
+            if (!noneRes)
+            {
+                if (goldRes)
+                    ResCount.gold++;
+                if (silverRes)
+                    ResCount.silver++;
+            }
+			//if (destroyParticleEffect != null) {
+			//	Debug.Log ("im Created");
+			//	Instantiate (destroyParticleEffect,transform.position,Quaternion.identity);
+
+			//	resBase.GetComponent<ResCount>().AddRes(1);
+			//}
 			Destroy(gameObject);
 		}
 	}
