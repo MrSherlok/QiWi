@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class ResCount : MonoBehaviour {
 
-
+    public static int main = 0;
     public static int gold = 0;
     public static int silver = 0;
 
 
 	private int resources;
+    [SerializeField]
+    Text textM;
     [SerializeField]
     Text textG;
     [SerializeField]
@@ -33,6 +35,7 @@ public class ResCount : MonoBehaviour {
 
     void Update()
     {
+        textM.text = main.ToString();
         textG.text = gold.ToString();
         textS.text = silver.ToString();
     }

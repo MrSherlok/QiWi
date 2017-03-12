@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockLogic : MonoBehaviour {
     //public int PosX;
     //public int PosY;
-    public bool noneRes = true;
+    public bool mainRes = true;
     public bool goldRes = false;
     public bool silverRes = false;
 
@@ -52,25 +52,28 @@ public class BlockLogic : MonoBehaviour {
             }
 		UpdateHp ();
 	}
-	private void UpdateHp(){
-		
-		if (hp <= 0) {
+    private void UpdateHp()
+    {
 
-            if (!noneRes)
-            {
-                if (goldRes)
-                    ResCount.gold++;
-                if (silverRes)
-                    ResCount.silver++;
-            }
-			//if (destroyParticleEffect != null) {
-			//	Debug.Log ("im Created");
-			//	Instantiate (destroyParticleEffect,transform.position,Quaternion.identity);
+        if (hp <= 0)
+        {
 
-			//	resBase.GetComponent<ResCount>().AddRes(1);
-			//}
-			Destroy(gameObject);
-		}
-	}
+            if (mainRes)
+                ResCount.main++;
+
+            if (goldRes)
+                ResCount.gold++;
+            if (silverRes)
+                ResCount.silver++;
+
+            //if (destroyParticleEffect != null) {
+            //	Debug.Log ("im Created");
+            //	Instantiate (destroyParticleEffect,transform.position,Quaternion.identity);
+
+            //	resBase.GetComponent<ResCount>().AddRes(1);
+            //}
+            Destroy(gameObject);
+        }
+    }
 
 }
