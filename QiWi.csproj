@@ -88,6 +88,7 @@
     <Compile Include="Assets\BombScript.cs" />
     <Compile Include="Assets\DestroyBlocks.cs" />
     <Compile Include="Assets\DestroySelf.cs" />
+    <Compile Include="Assets\HintView.cs" />
     <Compile Include="Assets\OpenCraftPanel.cs" />
     <Compile Include="Assets\PlayerTargeter.cs" />
     <Compile Include="Assets\ResCount.cs" />
