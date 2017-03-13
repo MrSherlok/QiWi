@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 	Animator ani;
+	public GameObject pivot;
 
     private void Start()
 	{	ani = GetComponent<Animator> ();
@@ -22,9 +23,9 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.tag == "fog")
         {	
 			if (transform.position.x > Player.transform.position.x) {
-				transform.rotation = Quaternion.Euler (0, 0, 0);
+				pivot.transform.rotation = Quaternion.Euler (0, 0, 0);
 			} else {
-				transform.rotation = Quaternion.Euler(0, 180, 0);
+				pivot.transform.rotation = Quaternion.Euler(0, 180, 0);
 			}
             transform.position = Vector3.Lerp(transform.position, Player.transform.position, 0.01f);
         }
