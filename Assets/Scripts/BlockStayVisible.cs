@@ -22,7 +22,7 @@ public class BlockStayVisible : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         //Debug.Log(col.gameObject.name);
-        if (col.gameObject.GetComponent<BlockLogic>() != null)
+        if (col.gameObject.tag == "DestroybleBox" || col.gameObject.tag == "UndestroybleBox")
         {
             _tile = col.gameObject;
             //string[] pos = gameObject.name.Split('_');

@@ -57,8 +57,8 @@ public class Level_blocks : MonoBehaviour
     {
         int blockIndex = int.Parse(blockType);
 
-        if (blockIndex != 0)
-        {
+        //if (blockIndex != 0)
+        //{
             GameObject newBlock = Instantiate(blocksTypes[blockIndex]);
             //newBlock.GetComponent<BlockLogic>().PosX = x;
             //newBlock.GetComponent<BlockLogic>().PosY = y;
@@ -69,7 +69,7 @@ public class Level_blocks : MonoBehaviour
             }
             newBlock.transform.parent = blockParent.transform;
             newBlock.transform.position = new Vector3(worldStart.x + (blockSize * x), worldStart.y - (blockSize * y));
-        }
+        //}
     }
 
 
@@ -94,7 +94,7 @@ public class Level_blocks : MonoBehaviour
 
     private string[] ReadLevelText()
     {
-        TextAsset bindData = Resources.Load("1") as TextAsset;
+        TextAsset bindData = Resources.Load("2") as TextAsset;
 
         //string data = bindData.text.Replace(System.Environment.NewLine, string.Empty);
         return bindData.text.Split('-');
