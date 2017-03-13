@@ -50,23 +50,25 @@
      <Compile Include="Assets\BombScript.cs" />
      <Compile Include="Assets\DestroyBlocks.cs" />
      <Compile Include="Assets\DestroySelf.cs" />
+     <Compile Include="Assets\HintView.cs" />
      <Compile Include="Assets\OpenCraftPanel.cs" />
      <Compile Include="Assets\PlayerTargeter.cs" />
      <Compile Include="Assets\ResCount.cs" />
      <Compile Include="Assets\Scripts\BlockStayVisible.cs" />
      <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Level_blocks.cs" />
      <Compile Include="Assets\Scripts\MapCamera.cs" />
      <Compile Include="Assets\SpawnCraftedObject.cs" />
      <Compile Include="Assets\VirtualJoystick.cs" />
+     <Compile Include="Assets\bur_enemy.cs" />
      <Compile Include="Assets\lookAT.cs" />
      <Compile Include="Assets\naz\BlockLogic.cs" />
      <Compile Include="Assets\naz\BurMachine.cs" />
      <Compile Include="Assets\naz\SimplePlayerController.cs" />
-     <None Include="Assets\Resources\1.txt" />
-     <None Include="Assets\Resources\0.txt" />
-     <None Include="Assets\Resources\0 — копия.txt" />
+     <None Include="Assets\Resources\2.txt" />
      <None Include="Assets\Resources\visible.txt" />
+     <None Include="Assets\Resources\1.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/unity56b7/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
