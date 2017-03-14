@@ -84,7 +84,7 @@ public class Level_blocks : MonoBehaviour
 
     private void ChangeColor(GameObject block)
     {
-        block.GetComponent<SpriteRenderer>().enabled = false;
+        block.GetComponent<SpriteRenderer>().enabled = true;
     }
 
 
