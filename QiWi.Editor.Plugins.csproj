@@ -133,6 +133,8 @@
   <ItemGroup>
     <None Include="Assets\Resources\1.txt" />
     <None Include="Assets\Resources\2.txt" />
+    <None Include="Assets\Resources\3.txt" />
+    <None Include="Assets\Resources\v.txt" />
     <None Include="Assets\Resources\visible.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

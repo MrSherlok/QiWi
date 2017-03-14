@@ -45,7 +45,7 @@ public class Level_blocks : MonoBehaviour
 
             for (int x = 0; x < mapX; x++)
             {
-                PlaceBlock(newBlock[x].ToString(), x, y, worldStart, blockVisible[x]);
+                    PlaceBlock(newBlock[x].ToString(), x, y, worldStart, blockVisible[x]);
                 //txt.text += newBlock[x].ToString();
             }
             //txt.text += "\n";
@@ -59,7 +59,15 @@ public class Level_blocks : MonoBehaviour
 
         //if (blockIndex != 0)
         //{
-            GameObject newBlock = Instantiate(blocksTypes[blockIndex]);
+        GameObject newBlock;
+        if (y >= 50)
+        {
+            newBlock = Instantiate(blocksTypes[blockIndex + 10]);
+        }
+        else
+        {
+            newBlock = Instantiate(blocksTypes[blockIndex]);
+        }
             //newBlock.GetComponent<BlockLogic>().PosX = x;
             //newBlock.GetComponent<BlockLogic>().PosY = y;
             newBlock.name = x + "_" + y;
@@ -76,7 +84,7 @@ public class Level_blocks : MonoBehaviour
 
     private void ChangeColor(GameObject block)
     {
-        block.GetComponent<SpriteRenderer>().enabled = true;
+        block.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 

@@ -23,9 +23,9 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.tag == "fog")
         {	
 			if (transform.position.x > Player.transform.position.x) {
-				pivot.transform.rotation = Quaternion.Euler (0, 0, 0);
+				transform.rotation = Quaternion.Euler (0, 0, 0);
 			} else {
-				pivot.transform.rotation = Quaternion.Euler(0, 180, 0);
+				transform.rotation = Quaternion.Euler(0, 180, 0);
 			}
             transform.position = Vector3.Lerp(transform.position, Player.transform.position, 0.01f);
         }

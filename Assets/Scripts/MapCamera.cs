@@ -7,7 +7,9 @@ public class MapCamera : MonoBehaviour {
     [SerializeField]
     Camera main;
     [SerializeField]
-    Camera map;
+    GameObject bag;
+    [SerializeField]
+    GameObject craftPanel;
 
     bool mainCam;
 
@@ -22,11 +24,14 @@ public class MapCamera : MonoBehaviour {
         mainCam = !mainCam;
         if (mainCam)
         {
+            bag.SetActive(true);
             main.orthographicSize = 2;
             //main.enabled = true;
             //map.enabled = false;
         } else
         {
+            bag.SetActive(false);
+            craftPanel.SetActive(false);
             main.orthographicSize = 10;
             //main.enabled = false;
             //map.enabled = true;

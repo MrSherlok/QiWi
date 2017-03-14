@@ -97,7 +97,9 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Level_blocks.cs" />
     <Compile Include="Assets\Scripts\MapCamera.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\SpawnCraftedObject.cs" />
+    <Compile Include="Assets\Video.cs" />
     <Compile Include="Assets\VirtualJoystick.cs" />
     <Compile Include="Assets\bur_enemy.cs" />
     <Compile Include="Assets\lookAT.cs" />
@@ -108,6 +110,8 @@
   <ItemGroup>
     <None Include="Assets\Resources\1.txt" />
     <None Include="Assets\Resources\2.txt" />
+    <None Include="Assets\Resources\3.txt" />
+    <None Include="Assets\Resources\v.txt" />
     <None Include="Assets\Resources\visible.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
