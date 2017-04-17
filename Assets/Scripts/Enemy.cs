@@ -36,6 +36,10 @@ public class Enemy : MonoBehaviour
 		{
 			ani.SetBool("ImFollow",true);
 		}
+        if(col.gameObject.tag == "Player")
+        {
+            Player.GetComponent<SimplePlayerController>().Respawn();
+        }
 	}
 	void OnTriggerExit2D(Collider2D col)
 	{

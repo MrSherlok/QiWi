@@ -92,6 +92,7 @@
     <Compile Include="Assets\OpenCraftPanel.cs" />
     <Compile Include="Assets\PlayerTargeter.cs" />
     <Compile Include="Assets\ResCount.cs" />
+    <Compile Include="Assets\Scripts\Big_block.cs" />
     <Compile Include="Assets\Scripts\BlockStayVisible.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -111,6 +112,7 @@
     <None Include="Assets\Resources\1.txt" />
     <None Include="Assets\Resources\2.txt" />
     <None Include="Assets\Resources\3.txt" />
+    <None Include="Assets\Resources\Big_block1.txt" />
     <None Include="Assets\Resources\v.txt" />
     <None Include="Assets\Resources\visible.txt" />
   </ItemGroup>

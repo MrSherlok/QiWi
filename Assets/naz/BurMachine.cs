@@ -7,6 +7,7 @@ public class BurMachine : MonoBehaviour {
 	private ParticleSystem burEffect;
 	public float burSpeed = 0.1f;
 
+
     public static bool hasBlock = false;
 
     //public GameObject bur;
@@ -19,7 +20,7 @@ public class BurMachine : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col){
 		
-		if (col.gameObject.tag == "DestroybleBox" && burCD) {
+		if (col.gameObject.tag == "DestroybleBox" && burCD && SimplePlayerController.IsAttack) {
             hasBlock = true;
             blockTargerSquad.transform.position = col.transform.position;
             Attack();

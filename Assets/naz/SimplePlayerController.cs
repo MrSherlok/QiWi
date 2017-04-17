@@ -10,9 +10,15 @@ public class SimplePlayerController : MonoBehaviour {
     private float jumpTime = 1f;
     public float jumpTimeLeft;
 
-	public GameObject bur;
 
-	Animator ani;
+    public static bool IsAttack = false;
+
+    [SerializeField]
+    private GameObject bur;
+    [SerializeField]
+    private GameObject respawnPoint;
+
+    Animator ani;
 
 	void Start()
 	{	
@@ -58,25 +64,36 @@ public class SimplePlayerController : MonoBehaviour {
         }
 		if (movementVector.y < -0.65f)
 		{
-            
-			ani.SetTrigger ("AttackUnder");
+            if (IsAttack)
+            {
+                ani.SetTrigger("AttackUnder");
+            }
 		}
 		if (movementVector.y > 0.75f)
 		{
             //if (BurMachine.hasBlock)
-                ani.SetTrigger ("UpAttack");
+            if (jumpTimeLeft <= 0)
+            {
+                jumpTimeLeft = jumpTime;
+                rb2d.velocity = Vector2.up * 5;
+            }
+            if (IsAttack)
+            {
+                ani.SetTrigger("UpAttack");
+            }
 		}
 
 	}
 
     public void Jump()
     {
+        IsAttack = !IsAttack;
 
-        if (jumpTimeLeft <= 0)
-        {
-            jumpTimeLeft = jumpTime;
-            rb2d.velocity = Vector2.up * 5;
-        }
+    }
+
+    public void Respawn()
+    {
+        gameObject.transform.position = respawnPoint.transform.position;
     }
 }
 
