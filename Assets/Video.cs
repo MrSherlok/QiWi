@@ -19,7 +19,7 @@ public class Video : MonoBehaviour {
         time += Time.deltaTime;
         if(time > 7.5f && !ice)
         {
-            Player.GetComponent<SimplePlayerController>().Jump();
+            Player.GetComponent<SimplePlayerController>().Attack();
         }
         if(time >8f && !lava)
         {

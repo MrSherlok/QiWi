@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 		}
         if(col.gameObject.tag == "Player")
         {
-            Player.GetComponent<SimplePlayerController>().Respawn();
+            Player.GetComponent<SimplePlayerController>().Respawn(0);
         }
 	}
 	void OnTriggerExit2D(Collider2D col)

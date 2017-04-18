@@ -85,13 +85,13 @@ public class SimplePlayerController : MonoBehaviour {
 
 	}
 
-    public void Jump()
+    public void Attack()
     {
         IsAttack = !IsAttack;
 
     }
 
-    public void Respawn()
+    public void Respawn(int death_method)
     {
         gameObject.transform.position = respawnPoint.transform.position;
     }
