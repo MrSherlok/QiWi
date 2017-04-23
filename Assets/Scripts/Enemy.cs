@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -38,7 +35,7 @@ public class Enemy : MonoBehaviour
 		}
         if(col.gameObject.tag == "Player")
         {
-            Player.GetComponent<SimplePlayerController>().Respawn(0);
+            Player.GetComponent<SimplePlayerController>().Respawn(1);
         }
 	}
 	void OnTriggerExit2D(Collider2D col)

@@ -18,11 +18,14 @@ public class SimplePlayerController : MonoBehaviour {
     [SerializeField]
     private GameObject respawnPoint;
 
+    private Vector3 resp;
+
     Animator ani;
 
 	void Start()
-	{	
-		ani = GetComponent<Animator>();
+	{
+        resp = respawnPoint.transform.position;
+        ani = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 	void LateUpdate(){
@@ -93,7 +96,21 @@ public class SimplePlayerController : MonoBehaviour {
 
     public void Respawn(int death_method)
     {
-        gameObject.transform.position = respawnPoint.transform.position;
+        /*
+         * 0 - portal
+         * 1 - enemy
+         */
+        if(death_method == 0)
+        {            
+            gameObject.transform.position = resp;
+        } else
+        {
+            if (death_method == 1)
+            {
+                gameObject.transform.position = resp;
+            }
+        }
+        
     }
 }
 
