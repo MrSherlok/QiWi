@@ -4,17 +4,23 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class SaveLoad : MonoBehaviour
 {
+
+    [SerializeField]
+    Text txt;
 
     public static int ccoins = 8;
     private void Start()
     {
-        Debug.Log(ccoins);
+        txt.text = ccoins.ToString();
         Save();
-        Debug.Log(ccoins);
+        txt.text +="\n"+ ccoins.ToString();
         Load();
-        Debug.Log(ccoins);
+        txt.text += "\n" + ccoins.ToString();
+        txt.text += "\n" + Application.persistentDataPath;
     }
 
     public static void Save()
